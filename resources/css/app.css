@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.spinner {
+    position: absolute;
+}
+
 @import '~@fortawesome/fontawesome-free/css/fontawesome';
 @import '~@fortawesome/fontawesome-free/css/regular';
 @import '~@fortawesome/fontawesome-free/css/solid';
