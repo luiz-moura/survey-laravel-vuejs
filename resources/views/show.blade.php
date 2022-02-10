@@ -4,7 +4,7 @@
   <div class="movie-info border-b border-gray-800">
     <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
       <div class="flex-none">
-        <img src="{{ "https://image.tmdb.org/t/p/w500/{$movie['poster_path']}" }}" alt="movie" class="w-64 lg:w-96">
+        <img src="{{ "https://image.tmdb.org/t/p/w500{$movie['poster_path']}" }}" alt="movie" class="w-64 lg:w-96">
       </div>
       <div class="md:ml-24">
         <h2 class="text-4xl mt-4 md:mt-0 font-semibold">{{ $movie['title'] }}</h2>
@@ -61,7 +61,7 @@
           @if ($loop->index < 5)
             <div class="mt-8">
               <a href="#">
-                <img src="{{ "https://image.tmdb.org/t/p/w300/{$cast['profile_path']}" }}" alt="character" class="hover:opacity-75 transition ease-in-out duration-150">
+                <img src="{{ "https://image.tmdb.org/t/p/w300{$cast['profile_path']}" }}" alt="character" class="hover:opacity-75 transition ease-in-out duration-150">
               </a>
               <div class="mt-2">
                 <a href="#" class="text-lg mt-2 hover:text-gray:300">{{ $cast['name'] }}</a>
@@ -84,7 +84,7 @@
           @if ($loop->index < 9)
             <div class="mt-8">
               <a href="#">
-                <img src="{{ "https://image.tmdb.org/t/p/w500/{$image['file_path']}" }}" alt="image" class="hover:opacity-75 transition ease-in-out duration-150">
+                <img src="{{ "https://image.tmdb.org/t/p/w500{$image['file_path']}" }}" alt="image" class="hover:opacity-75 transition ease-in-out duration-150">
               </a>
             </div>
           @endif
