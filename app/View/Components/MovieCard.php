@@ -11,10 +11,8 @@ class MovieCard extends Component
      *
      * @return void
      */
-    public function __construct(
-        public $movie,
-        public $genres
-    ) {
+    public function __construct(public $movie)
+    {
         //
     }
 
