@@ -19,16 +19,27 @@
       </div>
     </div><!-- end popular-actors -->
 
-    <div class="flex justify-between mt-16">
-      @if ($previous)
-        <a href="{{ route('actors.pagination', $previous) }}">Previous</a>
-      @else
-        <div></div>
-      @endif
-      @if ($next)
-        <a href="{{ route('actors.pagination', $next) }}">Next</a>
-      @endif
+    <div class="page-load-status my-8">
+      <div class="flex justify-center">
+        <div class="infinite-scroll-request spinner my-8 text-4xl">&nbsp;</div>
+      </div>
+      <p class="infinite-scroll-last">End of content</p>
+      <p class="infinite-scroll-error">Error</p>
     </div>
-  </div>
 @endsection
+
+@section('scripts')
+  <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+  <script>
+    let elem = document.querySelector('.grid');
+    let infScroll = new InfiniteScroll( elem, {
+      // options
+      path: '/actors/page/@{{#}}',
+      append: '.actor',
+      status: '.page-load-status',
+      // history: false,
+    });
+  </script>
+@endsection
+
 
