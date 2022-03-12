@@ -1,42 +1,41 @@
 @extends('layouts.main')
 
 @section('content')
-  <div class="movie-info border-b border-gray-800">
+  <div class="tv-info border-b border-gray-800">
     <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
       <div class="flex-none">
-        <img src="{{ $movie['poster_path'] }}" alt="movie" class="w-64 lg:w-96">
+        <img src="{{ $tvshow['poster_path'] }}" alt="tvshow" class="w-64 lg:w-96">
       </div>
       <div class="md:ml-24">
-        <h2 class="text-4xl mt-4 md:mt-0 font-semibold">{{ $movie['title'] }}</h2>
+        <h2 class="text-4xl mt-4 md:mt-0 font-semibold">{{ $tvshow['name'] }}</h2>
         <div class="flex flex-wrap items-center text-gray-400 text-sm mt-1">
           <span>
             <i class="fill-current text-orange-500 fas fa-star"></i>
           </span>
-          <span class="ml-1">{{ $movie['vote_average'] }}</span>
+          <span class="ml-1">{{ $tvshow['vote_average'] }}</span>
           <span class="mx-2">|</span>
-          <span>{{ $movie['release_date'] }}</span>
+          <span>{{ $tvshow['first_air_date'] }}</span>
           <span class="mx-2">|</span>
-          <span>{{ $movie['genres'] }}</span>
+          <span>{{ $tvshow['genres'] }}</span>
         </div>
 
         <p class="text-gray-300 mt-8">
-          {{ $movie['overview'] }}
+          {{ $tvshow['overview'] }}
         </p>
 
         <div class="mt-12">
-          <h4 class="text-white font-semibold">Featured Crew</h4>
           <div class="flex mt-4">
-            @foreach ($movie['crew'] as $crew)
+            @foreach ($tvshow['created_by'] as $crew)
               <div class="mr-8">
                 <div>{{ $crew['name'] }}</div>
-                <div class="text-sm text-gray-400">{{ $crew['job'] }}</div>
+                <div class="text-sm text-gray-400">Creator</div>
               </div>
             @endforeach
           </div>
         </div>
 
         <div x-data="{ isOpen: false }">
-          @if (count($movie['videos']['results']) > 0)
+          @if (count($tvshow['videos']['results']) > 0)
             <div class="mt-12">
               <button
                 x-on:click="isOpen = true"
@@ -65,7 +64,7 @@
                       width="560"
                       height="315"
                       class="responsive-iframe absolute top-0 left-0 w-full h-full"
-                      src="https://youtube.com/embed/{{ $movie['videos']['results'][0]['key'] }}"
+                      src="https://youtube.com/embed/{{ $tvshow['videos']['results'][0]['key'] }}"
                       style="border: 0;"
                       allow="autoplay; encrypted-media"
                       frameborder="0"
@@ -76,16 +75,15 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-  </div><!-- end movie-info -->
+  </div><!-- end tv-info -->
 
-  <div class="movie-cast border-b border-gray-800">
+  <div class="tv-cast border-b border-gray-800">
     <div class="container mx-auto px-4 py-16">
       <h2 class="text-4xl font-semibold">Cast</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-        @foreach ($movie['cast'] as $cast)
+        @foreach ($tvshow['cast'] as $cast)
           <div class="mt-8">
             <a href="{{ route('actors.show', $cast['id']) }}">
               <img src="{{ "https://image.tmdb.org/t/p/w300{$cast['profile_path']}" }}" alt="character" class="hover:opacity-75 transition ease-in-out duration-150">
@@ -100,13 +98,13 @@
         @endforeach
       </div>
     </div>
-  </div><!-- end movie-cast -->
+  </div><!-- end tv-cast -->
 
-  <div class="movie-images" x-data="{ isOpen: false, image: ''}">
+  <div class="tv-images" x-data="{ isOpen: false, image: ''}">
     <div class="container mx-auto px-4 py-16">
       <h2 class="text-4xl font-semibold">Images</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
-        @foreach ($movie['images'] as $image)
+        @foreach ($tvshow['images'] as $image)
           <div class="mt-8">
             <a
               x-on:click.prevent="
@@ -146,6 +144,6 @@
       </div>
 
     </div>
-  </div><!-- end movie-images -->
+  </div><!-- end tv-images -->
 
 @endsection
