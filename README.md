@@ -1,5 +1,4 @@
 # Welcome to laravel-movie-app 👋
-[![License: MIT License](https://img.shields.io/badge/License-MIT License-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > A movie App using Laravel, Tailwind CSS and The Movie DB REST API
 
