@@ -18,7 +18,6 @@
         @endforeach
       </div>
     </div><!-- end popular-actors -->
-
     <div class="page-load-status my-8">
       <div class="flex justify-center">
         <div class="infinite-scroll-request spinner my-8 text-4xl">&nbsp;</div>
@@ -32,12 +31,10 @@
   <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
   <script>
     let elem = document.querySelector('.grid');
-    let infScroll = new InfiniteScroll( elem, {
-      // options
+    let infScroll = new InfiniteScroll(elem, {
       path: '/actors/page/@{{#}}',
       append: '.actor',
       status: '.page-load-status',
-      // history: false,
     });
   </script>
 @endsection

@@ -18,11 +18,9 @@
           <span class="mx-2">|</span>
           <span>{{ $tvshow['genres'] }}</span>
         </div>
-
         <p class="text-gray-300 mt-8">
           {{ $tvshow['overview'] }}
         </p>
-
         <div class="mt-12">
           <div class="flex mt-4">
             @foreach ($tvshow['created_by'] as $crew)
@@ -33,7 +31,6 @@
             @endforeach
           </div>
         </div>
-
         <div x-data="{ isOpen: false }">
           @if (count($tvshow['videos']['results']) > 0)
             <div class="mt-12">
@@ -46,7 +43,6 @@
               </button>
             </div>
           @endif
-
           <div
             style="background-color: rgba(0, 0, 0, .5);"
             class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
@@ -118,7 +114,6 @@
           </div>
         @endforeach
       </div>
-
       <div
         style="background-color: rgba(0, 0, 0, .5);"
         class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"

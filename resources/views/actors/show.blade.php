@@ -52,13 +52,10 @@
           </span>
           <span class="ml-2">{{ $actor['birthday'] }} ({{ $actor['age'] }} years old) in {{ $actor['place_of_birth'] }}</span>
         </div>
-
         <p class="text-gray-300 mt-8">
           {{ $actor['biography'] }}
         </p>
-
         <h4 class="font-semibold mt-12">Known For</h4>
-
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           @foreach ($knownForMovies as $movie)
             <div class="mt-4">

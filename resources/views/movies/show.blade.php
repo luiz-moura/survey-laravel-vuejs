@@ -18,11 +18,9 @@
           <span class="mx-2">|</span>
           <span>{{ $movie['genres'] }}</span>
         </div>
-
         <p class="text-gray-300 mt-8">
           {{ $movie['overview'] }}
         </p>
-
         <div class="mt-12">
           <h4 class="text-white font-semibold">Featured Crew</h4>
           <div class="flex mt-4">
@@ -34,7 +32,6 @@
             @endforeach
           </div>
         </div>
-
         <div x-data="{ isOpen: false }">
           @if (count($movie['videos']['results']) > 0)
             <div class="mt-12">
@@ -47,7 +44,6 @@
               </button>
             </div>
           @endif
-
           <div
             style="background-color: rgba(0, 0, 0, .5);"
             class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
@@ -76,7 +72,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div><!-- end movie-info -->
@@ -120,7 +115,6 @@
           </div>
         @endforeach
       </div>
-
       <div
         style="background-color: rgba(0, 0, 0, .5);"
         class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
@@ -144,7 +138,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div><!-- end movie-images -->
 
