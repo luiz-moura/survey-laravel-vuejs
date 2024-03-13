@@ -15,20 +15,39 @@
 
 ## Install
 
-```sh
-composer install
-npm install && npm run dev
-php artisan key:generate
+1. Clone the project
+```bash
+  git clone https://github.com/luiz-moura/laravel-movie-app.git
 ```
+
+2. Create .env
+```bash
+  cp .env.example .env
+```
+
+3. Start the server in background
+```bash
+  docker-compose up -d
+```
+
+4. Create aliases for sail bash path
+```bash
+  alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+```
+
+5. Generate key
+```bash
+  sail artisan key:generate
+```
+
+6. Install NPM dependencies
+```bash
+  sail npm install && sail npm run dev
+```
+
+Project listen in port http://localhost:80
 
 Set your `TMDB_TOKEN` in your `.env` file. You can get an API key [here](https://www.themoviedb.org/documentation/api). Make sure to use the "API Read Access Token (v4 auth)" from the TMDb dashboard.
-
-## Usage
-
-```sh
-php artisan serve
-```
-Visit localhost:8000 in your browser
 
 ## Author
 
