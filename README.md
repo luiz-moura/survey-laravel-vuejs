@@ -40,7 +40,12 @@
   sail artisan key:generate
 ```
 
-6. Install NPM dependencies
+6. Install composer dependencies
+```bash
+  sail composer install
+```
+
+7. Install NPM dependencies
 ```bash
   sail npm install && sail npm run dev
 ```
